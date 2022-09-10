@@ -40,6 +40,4 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd /var/www/siakad
-            git pull origin master
-            composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-            php artisan migrate
+            ll
