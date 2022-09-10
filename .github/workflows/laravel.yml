@@ -26,18 +26,18 @@ jobs:
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         run: vendor/bin/phpunit
 
-    deploy:
-    needs: [test]
-    runs-on: ubuntu-latest
+    # deploy:
+    # needs: [test]
+    # runs-on: ubuntu-latest
 
-    steps:
-      - name: executing remote ssh commands using password
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
-          script: |
-            cd /var/www/siakad
-            ls -lah
+    # steps:
+    #  - name: SSH Remote Commands
+    #    uses: appleboy/ssh-action@v0.1.5
+    #     with:
+    #       host: ${{ secrets.HOST }}
+    #       username: ${{ secrets.USERNAME }}
+    #       password: ${{ secrets.PASSWORD }}
+    #       port: ${{ secrets.PORT }}
+    #       script: |
+    #         cd /var/www/siakad
+    #         ls -lah
