@@ -5,7 +5,7 @@
 <main class="form-signin w-100 m-auto">
     <form action="/login" method="POST">
       @csrf
-      {{-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> --}}
+      <img class="mb-4" src="{{ asset('Assets/img/logo.jpg') }}" alt="" width="72" height="57">
       @if(session()->has('sucess'))
       <div class="alert alert-success" role="alert">
         {{ session('sucess') }}
