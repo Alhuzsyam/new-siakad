@@ -26,10 +26,9 @@ jobs:
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         run: vendor/bin/phpunit
 
-  deploy:
+    deploy:
     needs: [tests]
-
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: executing remote ssh commands using password
