@@ -7,7 +7,7 @@ on:
     branches: ["master"]
 
 jobs:
-  tests:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +27,7 @@ jobs:
         run: vendor/bin/phpunit
 
     deploy:
-    needs: [tests]
+    needs: [test]
     runs-on: ubuntu-latest
 
     steps:
