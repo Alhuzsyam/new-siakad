@@ -31,8 +31,8 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-     - name: SSH Remote Commands
-       uses: appleboy/ssh-action@v0.1.5
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.5
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
