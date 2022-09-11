@@ -16,11 +16,11 @@
         {{ session('logError') }}
       </div>
       @endif
-      <h1 class="h3 mb-3 fw-normal">Sign in form</h1>
+      <h1 class="h3 mb-3 fw-normal">Sign in form PP ALQIBTIYAH</h1>
   
       <div class="form-floating">
         <input type="email" class="form-control @error('email') is-invalid @enderror" id="floatingInput" name="email" placeholder="name@example.com" required value="{{ old('email') }}">
-        <label for="floatingInput">Email address & HAG</label>
+        <label for="floatingInput">Email address</label>
         @error('email')
         <div class="invalid-feedback">
             {{ $message }}
