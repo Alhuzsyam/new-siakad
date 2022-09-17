@@ -54,7 +54,7 @@
                         {{ $s['kelas'] }}
                     </td>
                     <td class="py-4 px-6">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        <a href="#" class="font-bold text-blue-600 dark:text-blue-500 hover:underline">Detail</a>
                     </td>
                 </tr>
                 @endforeach
@@ -115,15 +115,23 @@
                     </div>
                     <div class="grid gap-6 mb-6 md:grid-cols-2">
                         <input type="text" name="telepon" id="telepon" placeholder="no telephone" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
-                        <input type="text" name="kelas" id="kelas" placeholder="kelas" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                        {{-- <input type="text" name="kelas" id="kelas" placeholder="kelas" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"> --}}
+                        <label for="underline_select" class="sr-only">Underline select</label>
+                        <select id="underline_select" name="kelas" class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                        <option selected>Pilih kelas</option>
+                       @foreach ($kelas as $kelas)
+                       <option value="{{ $kelas['nama'] }}">{{ $kelas['nama'] }}</option>
+                       @endforeach
+                        </select>
                     </div>
                     <div class="space-y-0 grid gap-6 mb-0 md:grid-cols-2">
-                        @error('kelas')
-                        <p class="mt-0 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oh, snapp!</span> {{ $message }}</p>
-                        @enderror
                         @error('telepon')
                         <p class="mt-0 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oh, snapp!</span> {{ $message }}</p>
                         @enderror
+                        @error('kelas')
+                        <p class="mt-0 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oh, snapp!</span> {{ $message }}</p>
+                        @enderror
+                       
                     </div>
                     <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><i class="fa-solid fa-floppy-disk"></i> simpan</button>
                 </form>

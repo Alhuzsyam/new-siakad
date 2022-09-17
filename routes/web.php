@@ -38,5 +38,7 @@ Route::post('/registration', [RegistrationController::class, 'store']);
 Route::get('/home', [HomeController::class, 'index'])->middleware('auth');
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('admin');
 Route::get('/siswa', [DashboardController::class, 'siswa'])->middleware('admin');
+Route::get('/kelas', [DashboardController::class, 'kelas'])->middleware('admin');
+Route::post('/addkelas', [DashboardController::class, 'addkelas'])->middleware('admin');
 Route::post('/addsiswa', [DashboardController::class, 'addsiswa'])->middleware('admin');
 Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Kelas;
 use App\Models\User;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -24,6 +25,7 @@ class DashboardController extends Controller
     }
     public function siswa()
     {
+        $kelas = Kelas::all();
         $siswa = User::orderBY('name')->where('role', '=', '0')->Paginate(3);
         $role = auth()->user()->role;
         $menu = Menu::all()->where('role', '=', $role);
@@ -31,7 +33,8 @@ class DashboardController extends Controller
         return view('dashboard.siswa', [
             'menu' => $menu,
             'uri' => $uri,
-            'siswa' => $siswa
+            'siswa' => $siswa,
+            'kelas' => $kelas
         ]);
     }
     public function addsiswa(Request $request)
@@ -48,5 +51,26 @@ class DashboardController extends Controller
 
         User::create($reqvalidate);
         return redirect('/siswa')->with('sucess', 'Registration sucessfuly!');
+    }
+    public function kelas()
+    {
+        $kelas = Kelas::orderBY('nama')->paginate(3);
+        $role = auth()->user()->role;
+        $menu = Menu::all()->where('role', '=', $role);
+        $uri = request()->segment(count(request()->segments()));
+        return view('dashboard.kelas', [
+            'menu' => $menu,
+            'uri' => $uri,
+            'kelas' => $kelas
+        ]);
+    }
+    public function addkelas(Request $req)
+    {
+
+        $reqvalidate = $req->validate([
+            'nama' => 'unique:kelas|required',
+        ]);
+        Kelas::create($reqvalidate);
+        return redirect('/kelas')->with('sucess', 'Registration sucessfuly!');
     }
 }
