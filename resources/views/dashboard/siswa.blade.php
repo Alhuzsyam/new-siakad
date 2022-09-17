@@ -61,13 +61,29 @@
             </tbody>
         </table>
         </div>
-        <div class="paginate float-right mt-4 gap-10 ">
-            {{ $siswa->links() }}
-        </div>
-
+        {{-- <div class="paginate float-right mt-4 gap-10 "> --}}
+             {{-- Jumlah Data : {{ $siswa->total() }}  --}}
+            {{-- {{ $siswa->links('vendor.pagination.default') }} --}}
+	        {{-- Halaman : {{ $siswa->currentPage() }}
+	      
+	        Data Per Halaman : {{ $siswa->perPage() }}
+	        {{ $siswa->links() }} --}}
+           
+        {{-- </div> --}}
+        {{-- <div class="paginate mt-5 grid grid-cols-6 float-right gap-8">
+            {{ $siswa->links('vendor.pagination.default') }} --}}
+            {{-- {{ $siswa->total()}} --}}
+        {{-- </div> --}}
+        <div class="flex justify-between paginate">
+            <div class="order-last">  {{ $siswa->links('vendor.pagination.default') }}</div>
+            <div class="mt-4"> <span class="italic">Total list data santri</span> <span class="font-bold italic">{{ $siswa->total()}}</span> </div>
+          </div> 
         <style>
             .paginate a{
                 margin-left: 10px;
+            }
+            .paginate p{
+                display: none;
             }
         </style>
     {{-- end tabel --}}
