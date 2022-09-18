@@ -39,6 +39,6 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd /var/www/new-siakad
-            git pull --rebase origin main
+            git pull origin main
             composer update -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
             php artisan migrate
