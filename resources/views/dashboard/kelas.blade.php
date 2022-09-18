@@ -50,7 +50,7 @@
                   {{ $k['nama'] }}
                 </th>
                 <td class="py-4 px-6">
-                    <a href="#" class="font-bold text-red-600 dark:text-blue-500 hover:underline">10</a>
+                    <a href="#" class="font-bold text-red-600 dark:text-blue-500 hover:underline">{{ $k['total'] }}</a>
                 </td>
                 <td class="py-4 px-6">
                     <a href="#" class="font-bold text-red-600 dark:text-blue-500 hover:underline">Delete</a>
