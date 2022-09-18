@@ -16,7 +16,7 @@
         {{ session('logError') }}
       </div>
       @endif
-      <h1 class="h3 mb-3 fw-normal">login in form</h1>
+      <h1 class="h3 mb-3 fw-normal">Sign in form</h1>
   
       <div class="form-floating">
         <input type="email" class="form-control @error('email') is-invalid @enderror" id="floatingInput" name="email" placeholder="name@example.com" required value="{{ old('email') }}">
