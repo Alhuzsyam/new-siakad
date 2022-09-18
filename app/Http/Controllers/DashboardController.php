@@ -26,7 +26,7 @@ class DashboardController extends Controller
     public function siswa()
     {
         $kelas = Kelas::all();
-        $siswa = User::orderBY('name')->where('role', '=', '0')->Paginate(3);
+        $siswa = User::orderBY('name')->where('role', '=', '0')->Paginate(5);
         $role = auth()->user()->role;
         $menu = Menu::all()->where('role', '=', $role);
         $uri = request()->segment(count(request()->segments()));
