@@ -26,7 +26,7 @@ jobs:
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         run: vendor/bin/phpunit
   deploy:
-    needs: [test]
+    needs: [tests]
 
     runs-on: ubuntu-latest
     steps:
