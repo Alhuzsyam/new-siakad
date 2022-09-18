@@ -23,15 +23,15 @@
  {{-- tabel --}}
  <div class="overflow-x-auto mt-5  shadow-md sm:rounded-sm w-100">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <thead class="text-xs text-gray-50 uppercase bg-gray-900 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="py-3 px-6">
                     No
                 </th>
-                <th scope="col" class="py-3 px-6">
+                <th scope="col" class="py-3 px-6" >
                     Kelas
                 </th>
-                <th scope="col" class="py-3 px-6">
+                <th scope="col" class="py-3 px-6 ">
                     Murid
                 </th>
                 <th scope="col" class="py-3 px-6">
@@ -50,7 +50,7 @@
                   {{ $k['nama'] }}
                 </th>
                 <td class="py-4 px-6">
-                    <a href="#" class="font-bold text-red-600 dark:text-blue-500 hover:underline">{{ $k['total'] }}</a>
+                    <a href="#" class=" text-white bg-blue-600 rounded-full py-0.4 px-8 dark:text-blue-500">{{ $k['total'] }}</a>
                 </td>
                 <td class="py-4 px-6">
                     <a href="#" class="font-bold text-red-600 dark:text-blue-500 hover:underline">Delete</a>
@@ -62,7 +62,7 @@
     </div>
     <div class="flex justify-between paginate">
         <div class="order-last">  {{ $kelas->links('vendor.pagination.default') }}</div>
-        <div class="mt-4"> <span class="italic">Total list data kelas</span> <span class="font-bold italic">{{ $kelas->total()}}</span> </div>
+        <div class="mt-4"> <span class="italic">Total list data kelas yang terisi</span> <span class="font-bold italic">{{ $kelas->total()}}</span> </div>
       </div> 
     <style>
         .paginate a{
