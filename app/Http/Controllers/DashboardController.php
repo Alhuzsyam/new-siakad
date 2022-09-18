@@ -54,7 +54,7 @@ class DashboardController extends Controller
     }
     public function kelas()
     {
-        $kelas = Kelas::selectRaw('count(*) as total, kelas.nama')->groupBy('kelas.nama')->join('users', 'users.kelas', '=', 'kelas.nama')->where('role', '=', '0')->paginate(5);
+        $kelas = Kelas::selectRaw('count(*) as total, kelas.nama')->groupBy('kelas.nama')->join('users', 'users.kelas', '=', 'kelas.nama')->where('role', '=', '0')->paginate(8);
         // $kelas = Kelas::orderBY('nama')->paginate(3);
         $role = auth()->user()->role;
         $menu = Menu::all()->where('role', '=', $role);
