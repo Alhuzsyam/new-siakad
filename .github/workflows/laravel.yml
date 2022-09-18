@@ -28,7 +28,7 @@ jobs:
 
   deploy:
     needs: [test]
-
+#     test
     runs-on: ubuntu-latest
     steps:
       - name: SSH Remote Commands
