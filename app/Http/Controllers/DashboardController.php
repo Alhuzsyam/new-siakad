@@ -13,7 +13,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-
         $role = auth()->user()->role;
         $menu = Menu::all()->where('role', '=', $role);
 
@@ -73,5 +72,8 @@ class DashboardController extends Controller
         ]);
         Kelas::create($reqvalidate);
         return redirect('/kelas')->with('sucess', 'Registration sucessfuly!');
+    }
+    public function payment(){
+        return "Hello";
     }
 }
