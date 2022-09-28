@@ -35,13 +35,13 @@
             <div class="flex flex-row justify-center space-x-8">
               <div class="flex flex-row justify-center my-auto space-x-4">
                   <a href="#" class="px-2">
-                      Products
+                      Kegitan
                   </a>
                   <a href="#" class="px-2">
-                      Features
+                      Kurikulum
                   </a>
                   <a href="#" class="px-2">
-                      About
+                      PHBI
                   </a>
                   <a href="#" class="px-2">
                       Contact
