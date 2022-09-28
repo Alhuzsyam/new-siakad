@@ -74,6 +74,6 @@ class DashboardController extends Controller
         return redirect('/kelas')->with('sucess', 'Registration sucessfuly!');
     }
     public function payment(){
-        return "Hello";
+        return view('dashboard .payemnet');
     }
 }

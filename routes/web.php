@@ -8,6 +8,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\MainController;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
 /*
@@ -21,14 +22,14 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 |
 */
 
-Route::get('/', function () {
-    return view('/welcome');
-});
+// Route::get('/', function () {
+//     return view('/welcome');
+// });
 // Route::get('/siswa', function () {
 //     return view('/siswa');
 // });
 // Route::get('/blog', [PostController::class, 'index']);
-
+Route::get('/', [MainController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);

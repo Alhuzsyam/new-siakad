@@ -1,4 +1,5 @@
-/** @type {import('tailwindcss').Config} */
+// /** @type {import('tailwindcss').Config} */
+// const colors = require('tailwindcss/colors')
 module.exports = {
   content: [
     "./resources/**/*.blade.php",
@@ -7,8 +8,14 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'poppins': ['Poppins', 'sans-serif'] 
-      },
+          'poppins': ['Poppins', 'sans-serif'] 
+      }
+    },
+    colors: {
+      main: "#0D0D2B",
+      icon: "#3671E9",
+      button: "#3671E9",
+      white10: "#FFFFFF1A"
     },
   },
   plugins: [],
